@@ -1,9 +1,14 @@
 /* Empty. Add your own CSS if you like */
+.player {
+    overflow: hidden;
+}
+
 .player-name {
     float: left;
     width: 50%;
     line-height: 28px;
     font-size: 28px;
+    display: block;
 }
 
 .player-score {
@@ -12,4 +17,38 @@
     line-height: 28px;
     font-size: 28px;
     text-align: right;
+    display: block;
+}
+
+.playerButtonBar {
+    width: 100%;
+    line-height: 18px;
+    font-size: 14px;
+    float: left;
+    clear: both;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.playerButtonBar button {
+    width: 15%;
+    float: left;
+}
+
+.playerButtonBar input {
+    width: 35%;
+    float: right;
+    border: thin solid #999;
+}
+
+.hidden {
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.show {
+    height: 32px;
+    padding: 6px 2px;
+    overflow: auto;
 }
