@@ -1,0 +1,16 @@
+<!--
+  This template loads for the 'tab.scorepad-detail' state (app.js)
+  'scorepad' is a $scope variable created in the scorepadsCtrl controller (controllers.js)
+  The scorepadsCtrl pulls data from the scorepads service (service.js)
+  The scorepads service returns an array of scorepad data
+-->
+<ion-view title="{{game.name}}">
+  <ion-content has-header="true">
+      <ion-list>
+          <ion-item ng-repeat="player in game.players" type="item-text-wrap">
+              <span class="player-name">{{player.name}}</span>
+              <span class="player-score">{{player.score}}</span>
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

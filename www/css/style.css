@@ -1,0 +1,15 @@
+/* Empty. Add your own CSS if you like */
+.player-name {
+    float: left;
+    width: 50%;
+    line-height: 28px;
+    font-size: 28px;
+}
+
+.player-score {
+    float: right;
+    width: 50%;
+    line-height: 28px;
+    font-size: 28px;
+    text-align: right;
+}
