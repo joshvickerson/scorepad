@@ -1,12 +1,17 @@
 /* Empty. Add your own CSS if you like */
 .player {
     overflow: hidden;
+    border-bottom: thin solid #ddd;
+}
+
+.player ion-item {
+    padding: 0 10px;
 }
 
 .player-name {
     float: left;
     width: 50%;
-    line-height: 28px;
+    line-height: 64px;
     font-size: 28px;
     display: block;
 }
@@ -14,7 +19,7 @@
 .player-score {
     float: right;
     width: 50%;
-    line-height: 28px;
+    line-height: 64px;
     font-size: 28px;
     text-align: right;
     display: block;
@@ -22,33 +27,36 @@
 
 .playerButtonBar {
     width: 100%;
-    line-height: 18px;
+    padding: 0px 10px 0px 0px;
     font-size: 14px;
     float: left;
     clear: both;
-    -webkit-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
 }
 
 .playerButtonBar button {
     width: 15%;
+    height: 100%;
     float: left;
+    border: none;
 }
 
 .playerButtonBar input {
     width: 35%;
     float: right;
     border: thin solid #999;
+    line-height: 36px;
+    height: 36px;
+    margin-top: 4px;
 }
 
 .hidden {
     height: 0px;
-    padding: 0px;
     overflow: hidden;
 }
 
 .show {
-    height: 32px;
-    padding: 6px 2px;
-    overflow: auto;
+    display: block;
+    height: 42px;
 }

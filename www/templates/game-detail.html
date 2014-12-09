@@ -7,16 +7,18 @@
 <ion-view title="{{game.name}}">
   <ion-content has-header="true">
       <ion-list>
-          <ion-item ng-repeat="player in game.players" type="item-text-wrap" class="player" detect-gestures gesture-type="tap">
+          <div class="player" ng-repeat="player in game.players">
+          <ion-item detect-gestures gesture-type="tap" type="item-text-wrap">
               <span class="player-name">{{player.name}}</span>
               <span class="player-score">{{player.score}}</span>
-              <div class="playerButtonBar hidden">
-                  <button class="addButton">+</button>
-                  <button class="subButton">-</button>
-                  <button class="setButton">=</button>
-                  <input type="number" />
-              </div>
           </ion-item>
+          <div class="playerButtonBar hidden">
+              <button class="addButton">+</button>
+              <button class="subButton">-</button>
+              <button class="setButton">=</button>
+              <input type="number" />
+          </div>
+          </div>
       </ion-list>
   </ion-content>
 </ion-view>

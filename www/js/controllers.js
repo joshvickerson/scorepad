@@ -24,20 +24,24 @@ angular.module('scorepad.controllers', [])
     $scope.game = gameDetails($stateParams, scorepads);
 
     // function to handle interaction when a player taps on a player item
-    $scope.playerTap = function(event, elem) {
-        // hide any currently open button bars
-        console.log("You tapped an item. Hooray!");
-        console.log(elem);
+    $scope.playerTap = function(event) {
+        var bar = event.target.parentNode.parentNode.getElementsByClassName('playerButtonBar')[0];
+        if(bar.className === "playerButtonBar show") {
+            bar.className = "playerButtonBar hidden";
+        }
+        else {
+            bar.className = "playerButtonBar show";
+        }
     }
 
 })
 
 .directive('detectGestures', function($ionicGesture) {
     return {
-        link: function($scope,elem,attr) {
+        link: function($scope,$element,attr) {
         switch(attr.gestureType) {
             case 'tap':
-                $ionicGesture.on('tap', $scope.playerTap, elem);
+                $ionicGesture.on('tap', $scope.playerTap, $element);
                 break;
         } // switch
         } // link
