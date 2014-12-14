@@ -7,7 +7,7 @@
 <ion-view title="{{scorepad.name}}">
   <ion-content has-header="true">
       <ion-list>
-          <ion-item ng-repeat="game in scorepad.games" type="item-text-wrap" href="#/tab/scorepad/{{scorepad.id}}/{{game.name}}">
+          <ion-item ng-repeat="game in scorepad.games" type="item-text-wrap" href="#/scorepad/{{scorepad.id}}/{{game.name}}">
               {{game.name}}
           </ion-item>
       </ion-list>

@@ -7,6 +7,7 @@ angular.module('scorepad.controllers', [])
 .controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {
     $scope.scorepad = scorepads.get($stateParams.scorepadId);
 })
+
 .controller('gameDetailCtrl', function($scope, $stateParams, scorepads) {
 
     // this function gets the relevant game object from the scorepad

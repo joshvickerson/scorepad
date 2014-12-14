@@ -18,6 +18,7 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
   });
 })
 
@@ -32,43 +33,31 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
     // Each tab has its own nav history stack:
 
     // setup an abstract state for the tabs directive
-    .state('tab', {
-        url: "/tab",
-        abstract: true,
-        templateUrl: "templates/tabs.html"
-    })
+    // .state('tab', {
+    //     url: "/tab",
+    //     abstract: true,
+    //     templateUrl: "templates/tabs.html"
+    // })
 
-    .state('tab.scorepads', {
+    .state('scorepads', {
         url: '/scorepads',
-        views: {
-            'tab-scorepads': {
-                templateUrl: 'templates/scorepads.html',
-                controller: 'scorepadsCtrl'
-            }
-        }
+        templateUrl: 'templates/scorepads.html',
+        controller: 'scorepadsCtrl'
     })
 
-    .state('tab.scorepad-detail', {
+    .state('scorepad-detail', {
         url: '/scorepad/:scorepadId',
-        views: {
-            'tab-scorepads': {
-                templateUrl: 'templates/scorepad-detail.html',
-                controller: 'scorepadDetailCtrl'
-            }
-        }
+        templateUrl: 'templates/scorepad-detail.html',
+        controller: 'scorepadDetailCtrl'
     })
 
-    .state('tab.game-detail', {
+    .state('game-detail', {
         url: '/scorepad/:scorepadId/:gameName',
-        views: {
-            'tab-scorepads': {
-                templateUrl: 'templates/game-detail.html',
-                controller: 'gameDetailCtrl'
-            }
-        }
+        templateUrl: 'templates/game-detail.html',
+        controller: 'gameDetailCtrl'
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/scorepads');
+  $urlRouterProvider.otherwise('/scorepads');
 
 });
