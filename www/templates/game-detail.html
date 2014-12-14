@@ -12,11 +12,11 @@
               <span class="player-name">{{player.name}}</span>
               <span class="player-score">{{player.score}}</span>
           </ion-item>
-          <div class="playerButtonBar hidden">
-              <button class="addButton">+</button>
-              <button class="subButton">-</button>
-              <button class="setButton">=</button>
-              <input type="number" />
+          <div id="{{$index}}" class="playerButtonBar hidden">
+              <button ng-click="scoreChangeButtonHandler('add',{{$index}})" class="addButton">+</button>
+              <button ng-click="scoreChangeButtonHandler('sub',{{$index}})" class="subButton">-</button>
+              <button ng-click="scoreChangeButtonHandler('set',{{$index}})" class="setButton">=</button>
+              <input class="numberInput" type="number" />
           </div>
           </div>
       </ion-list>

@@ -24,6 +24,9 @@ angular.module('scorepad.controllers', [])
     // add the game to the scope
     $scope.game = gameDetails($stateParams, scorepads);
 
+    // default to selecting the first player in the list
+    $scope.selectedPlayer = 0;
+
     // function to handle interaction when a player taps on a player item
     $scope.playerTap = function(event) {
         var bar = event.target.parentNode.parentNode.getElementsByClassName('playerButtonBar')[0];
@@ -32,7 +35,33 @@ angular.module('scorepad.controllers', [])
         }
         else {
             bar.className = "playerButtonBar show";
+            $scope.selectedPlayer = bar.id; // select the player
         }
+    }
+
+    $scope.scoreChangeButtonHandler = function(action, playerID) {
+
+        // get the points from the input
+        var points = parseInt(document.getElementById(playerID).getElementsByClassName('numberInput')[0].value);
+
+        // if a valid number entered, do the math
+        if(!isNaN(points)){
+            switch(action) {
+                case 'add':
+                    $scope.game.players[playerID].score += points;
+                    break;
+                case 'sub':
+                    $scope.game.players[playerID].score -= points;
+                    break;
+                case 'set':
+                    $scope.game.players[playerID].score = points;
+                    break;
+            }
+        }
+
+        // reset the input
+        document.getElementById(playerID).getElementsByClassName('numberInput')[0].value = "";
+
     }
 
 })
