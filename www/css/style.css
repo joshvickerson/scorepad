@@ -28,27 +28,36 @@
 .playerButtonBar {
     width: 100%;
     padding: 0px 10px 0px 0px;
-    font-size: 14px;
+    font-size: 18px;
     float: left;
     clear: both;
     -webkit-transition: height 0.2s ease-in-out;
     transition: height 0.2s ease-in-out;
+    background-color: #f0b840;
 }
 
 .playerButtonBar button {
-    width: 15%;
+    width: 20%;
+    max-width: 64px;
     height: 100%;
     float: left;
     border: none;
+    background-color: #f0b840;
+    color: #fff;
+    font-size: 24px;
+    border-right: thin solid #d39211;
+    padding: 0;
 }
 
 .playerButtonBar input {
-    width: 35%;
+    width: 25%;
+    max-width: 90px;
     float: right;
     border: thin solid #999;
     line-height: 36px;
     height: 36px;
-    margin-top: 4px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .hidden {
@@ -58,5 +67,5 @@
 
 .show {
     display: block;
-    height: 42px;
+    height: 46px;
 }
