@@ -1,7 +1,24 @@
 angular.module('scorepad.controllers', [])
 
-.controller('scorepadsCtrl', function($scope, scorepads) {
+.controller('scorepadsCtrl', function($scope, $location, scorepads) {
   $scope.scorepads = scorepads.all();
+
+  $scope.submit = function(data) {
+      // parse and submit form data
+      var newID = $scope.scorepads[$scope.scorepads.length-1].id + 1;
+      var newScorepad =
+      { id: newID, name: data.name, config: {
+              winScore: data.winScore,
+              maxPlayers: 4,
+              scoreType: 'p'
+          },
+          games: []
+      };
+      // store the scorepad
+      scorepads.create(newScorepad);
+      // go back to scorepads
+      $location.path("/scorepads");
+  }
 })
 
 .controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {

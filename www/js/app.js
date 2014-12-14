@@ -30,18 +30,15 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // Each tab has its own nav history stack:
-
-    // setup an abstract state for the tabs directive
-    // .state('tab', {
-    //     url: "/tab",
-    //     abstract: true,
-    //     templateUrl: "templates/tabs.html"
-    // })
-
     .state('scorepads', {
         url: '/scorepads',
         templateUrl: 'templates/scorepads.html',
+        controller: 'scorepadsCtrl'
+    })
+
+    .state('new-scorepad', {
+        url: '/scorepads/new',
+        templateUrl: 'templates/new-scorepad.html',
         controller: 'scorepadsCtrl'
     })
 

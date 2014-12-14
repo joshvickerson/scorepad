@@ -1,4 +1,22 @@
 /* Empty. Add your own CSS if you like */
+ion-content, .scroll, form {
+    height: 100%;
+}
+
+.bar-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    border-top: thin solid #999;
+}
+
+.bar-footer .button {
+    width: 50%;
+    margin: auto;
+    font-size: 18px !important;
+}
+
 .player {
     overflow: hidden;
     border-bottom: thin solid #ddd;
@@ -68,4 +86,27 @@
 .show {
     display: block;
     height: 46px;
+}
+
+form .field {
+    margin-top: 20px;
+}
+
+form .field:first-child {
+    margin-top: 0px;
+}
+
+form label {
+    font-size: 16px;
+}
+
+form input[type="text"],
+form input[type="tel"] {
+    border: thin solid #999;
+    border-radius: 4px;
+    padding: 0 3px;
+}
+
+form input[type="tel"] {
+    width: 50%;
 }

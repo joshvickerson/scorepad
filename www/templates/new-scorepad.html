@@ -1,0 +1,29 @@
+<ion-view title="New Scorepad">
+  <ion-content padding="true">
+    <form name="newScorepad" ng-submit="submit(data)">
+        <div class="field">
+            <label for="name">Scorepad Title:</label>
+            <input type="text"
+                name="name"
+                maxlength="20"
+                minlength="1"
+                placeholder="E.g. Scrabble, Rummy, etc."
+                ng-model="data.name"
+                required/>
+        </div>
+        <div class="field">
+            <label for="winScore">Winning Score:</label>
+            <input type="tel"
+            name="winScore"
+            maxlength="5"
+            minlength="1"
+            placeholder="Enter 0 for no winning score."
+            ng-model="data.winScore"
+            required/>
+        </div>
+        <div class="bar bar-footer">
+            <input value="Create Scorepad" type="submit" for="newScorepad" class="button button-balanced"/>
+        </div>
+    </form>
+</ion-content>
+</ion-view>
