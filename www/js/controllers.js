@@ -13,7 +13,7 @@ angular.module('scorepad.controllers', [])
       // parse and submit form data
       var newID = 0;
       if($scope.scorepads.length > 0) {
-          $scope.scorepads[$scope.scorepads.length-1].id + 1;
+          newID = $scope.scorepads[$scope.scorepads.length-1].id + 1;
       }
       var newScorepad =
       { id: newID, name: data.name, config: {
@@ -31,6 +31,7 @@ angular.module('scorepad.controllers', [])
 })
 
 .controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {
+
     $scope.scorepad = scorepads.get($stateParams.scorepadId);
 
     // function for the creation of new games

@@ -31,8 +31,13 @@ angular.module('scorepad.services', ['ngStorage'])
       return $localStorage.scorepads;
     },
     get: function(scorepadId) {
-      // Simple index lookup
-      return $localStorage.scorepads[scorepadId];
+      // find the scorepad with the chosen id
+      for(var i = 0; i < $localStorage.scorepads.length; i++) {
+          if($localStorage.scorepads[i].id == scorepadId) {
+              return $localStorage.scorepads[i];
+          }
+      }
+      console.log("ERROR: Scorepad not found");
     },
     create: function(data) {
         $localStorage.scorepads.push(data);
