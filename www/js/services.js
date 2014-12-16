@@ -33,10 +33,12 @@ angular.module('scorepad.services', ['ngStorage'])
     get: function(scorepadId) {
       // Simple index lookup
       return $localStorage.scorepads[scorepadId];
-  },
+    },
     create: function(data) {
         $localStorage.scorepads.push(data);
-        // reroute to scorepads view
+    },
+    delete: function(scorepad) {
+        $localStorage.scorepads.splice($localStorage.scorepads.indexOf(scorepad), 1);
     }
   }
 });

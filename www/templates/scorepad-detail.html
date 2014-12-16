@@ -9,6 +9,7 @@
       <ion-list>
           <ion-item ng-repeat="game in scorepad.games" type="item-text-wrap" href="#/scorepad/{{scorepad.id}}/{{game.name}}">
               {{game.name}}
+              <ion-option-button ng-click="swipeToDelete(game)" class="button-assertive deleteButton">Delete</ion-option-button>
           </ion-item>
       </ion-list>
   </ion-content>

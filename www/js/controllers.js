@@ -3,10 +3,18 @@ angular.module('scorepad.controllers', [])
 .controller('scorepadsCtrl', function($scope, $location, scorepads) {
   $scope.scorepads = scorepads.all();
 
+  // function to handle the delete action for scorepads
+  $scope.swipeToDelete = function(scorepad) {
+      scorepads.delete(scorepad);
+  }
+
   // function for the creation of new scorepads
   $scope.submit = function(data) {
       // parse and submit form data
-      var newID = $scope.scorepads[$scope.scorepads.length-1].id + 1;
+      var newID = 0;
+      if($scope.scorepads.length > 0) {
+          $scope.scorepads[$scope.scorepads.length-1].id + 1;
+      }
       var newScorepad =
       { id: newID, name: data.name, config: {
               winScore: data.winScore,
@@ -50,6 +58,11 @@ angular.module('scorepad.controllers', [])
         // go back to the games list
         window.history.back();
     };
+
+    // function to handle swipe to delete a game
+    $scope.swipeToDelete = function(game) {
+        $scope.scorepad.games.splice($scope.scorepad.games.indexOf(game), 1);
+    }
 })
 
 .controller('gameDetailCtrl', function($scope, $stateParams, $ionicPopup, scorepads) {

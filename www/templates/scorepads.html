@@ -1,8 +1,9 @@
 <ion-view title="Scorepads">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="scorepad in scorepads" type="item-text-wrap" href="#/scorepad/{{scorepad.id}}">
+      <ion-item ng-repeat="scorepad in scorepads" href="#/scorepad/{{scorepad.id}}">
         {{scorepad.name}}
+        <ion-option-button ng-click="swipeToDelete(scorepad)" class="button-assertive deleteButton">Delete</ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

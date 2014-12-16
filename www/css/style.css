@@ -110,3 +110,7 @@ form input[type="tel"] {
 form input[type="tel"] {
     width: 50%;
 }
+
+.deleteButton {
+    line-height: 52px;
+}
