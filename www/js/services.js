@@ -17,8 +17,8 @@ angular.module('scorepad.services', ['ngStorage'])
                     {
                         name: "Game 1",
                         players: [
-                        {name: "Player 1", score: 50},
-                        {name: "Josh", score: 25}
+                        {name: "Player 1", score: 0},
+                    {name: "Player 2", score: 0}
                         ]
                     }
                 ]
