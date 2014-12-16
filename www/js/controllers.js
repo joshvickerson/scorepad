@@ -3,6 +3,7 @@ angular.module('scorepad.controllers', [])
 .controller('scorepadsCtrl', function($scope, $location, scorepads) {
   $scope.scorepads = scorepads.all();
 
+  // function for the creation of new scorepads
   $scope.submit = function(data) {
       // parse and submit form data
       var newID = $scope.scorepads[$scope.scorepads.length-1].id + 1;
@@ -23,9 +24,35 @@ angular.module('scorepad.controllers', [])
 
 .controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {
     $scope.scorepad = scorepads.get($stateParams.scorepadId);
+
+    // function for the creation of new games
+    $scope.submit = function(data) {
+
+        var players = [];
+        players.push({name:data.player1, score: 0});
+        if(data.player2) {
+            players.push({name:data.player2, score: 0});
+        }
+        if(data.player3) {
+            players.push({name:data.player3, score: 0});
+        }
+        if(data.player4) {
+            players.push({name:data.player4, score: 0});
+        }
+
+        var newGame =
+        {
+            name: data.name,
+            players: players
+        }
+        // add the new game to the games array
+        $scope.scorepad.games.push(newGame);
+        // go back to the games list
+        window.history.back();
+    };
 })
 
-.controller('gameDetailCtrl', function($scope, $stateParams, scorepads) {
+.controller('gameDetailCtrl', function($scope, $stateParams, $ionicPopup, scorepads) {
 
     // this function gets the relevant game object from the scorepad
     function gameDetails($stateParams, scorepads) {
@@ -79,6 +106,25 @@ angular.module('scorepad.controllers', [])
         // reset the input
         document.getElementById(playerID).getElementsByClassName('numberInput')[0].value = "";
 
+    }
+
+    // function to reset the score of all players
+    $scope.resetGame = function() {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Reset',
+            template: 'Are you sure you want to set all scores to 0?',
+            buttons: [
+            {   text: 'No'},
+            {   text: 'Yes',
+                type: 'button-balanced',
+                onTap: function() {
+                    for(var i = 0; i < $scope.game.players.length; i++) {
+                        $scope.game.players[i].score = 0;
+                    }
+                }
+            }
+            ]
+        });
     }
 
 })

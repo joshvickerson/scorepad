@@ -48,6 +48,12 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
         controller: 'scorepadDetailCtrl'
     })
 
+    .state('new-game', {
+        url: '/scorepad/:scorepadId/new',
+        templateUrl: 'templates/new-game.html',
+        controller: 'scorepadDetailCtrl'
+    })
+
     .state('game-detail', {
         url: '/scorepad/:scorepadId/:gameName',
         templateUrl: 'templates/game-detail.html',
