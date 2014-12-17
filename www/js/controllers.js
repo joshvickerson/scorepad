@@ -115,6 +115,13 @@ angular.module('scorepad.controllers', [])
                     $scope.game.players[playerID].score = points;
                     break;
             }
+            if($scope.game.players[playerID].score > 0 &&
+               $scope.game.players[playerID].score >= scorepads.get($stateParams.scorepadId).config.winScore) {
+                   $ionicPopup.alert({
+                       title: 'Winner!',
+                       template: $scope.game.players[playerID].name + ' wins!'
+                   });
+               }
         }
 
         // reset the input
