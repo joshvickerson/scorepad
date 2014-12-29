@@ -3,6 +3,12 @@ ion-content, .scroll, form {
     height: 100%;
 }
 
+.header-item,
+.header-item button {
+    color: #f0b840 !important;
+    text-shadow: 1px 1px 1px #eee;
+}
+
 .bar-footer {
     width: 100%;
     position: absolute;
@@ -76,6 +82,12 @@ ion-content, .scroll, form {
     height: 36px;
     margin-top: 5px;
     text-align: center;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
+}
+
+.playerButtonBar.hidden input {
+    height: 0;
 }
 
 .hidden {
