@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.scorepad642567" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>scorepad</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Scorepad is a simple score keeping app designed for card and board games.
     </description>
   <author email="josh@joshvickerson.com" href="http://usescorepad.com/">
-      Ionic Framework Team
+      Josh Vickerson
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -13,7 +13,19 @@
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+  <preference name="AutoHideSplashScreen" value="false" />
+  <preference name="ShowSplashScreenSpinner" value="false"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+
+  <platform name="ios">
+      <!-- images are determined by width and height. The following are supported -->
+      <splash src="splash/Default~iphone.png" width="320" height="480"/>
+      <splash src="splash/Default@2x~iphone.png" width="640" height="960"/>
+      <splash src="splash/Default-568h@2x~iphone.png" width="640" height="1136"/>
+      <splash src="splash/Default-667h.png" width="750" height="1334"/>
+      <splash src="splash/Default-736h.png" width="1242" height="2208"/>
+  </platform>
+
 </widget>

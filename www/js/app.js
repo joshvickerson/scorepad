@@ -5,9 +5,14 @@
 // the 2nd parameter is an array of 'requires'
 // 'scorepad.services' is found in services.js
 // 'scorepad.controllers' is found in controllers.js
-angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'])
+angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSplashscreen) {
+
+    setTimeout(function() {
+        $cordovaSplashscreen.hide()
+    }, 2000)
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
