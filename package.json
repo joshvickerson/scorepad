@@ -1,7 +1,7 @@
 {
-  "name": "scorepad",
+  "name": "Scorepad",
   "version": "1.0.0",
-  "description": "scorepad: An Ionic project",
+  "description": "Scorepad: The simple score keeper.",
   "dependencies": {
     "async": "^0.9.0",
     "gulp": "^3.5.6",

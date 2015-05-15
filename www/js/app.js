@@ -10,8 +10,8 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
 .run(function($ionicPlatform, $cordovaSplashscreen) {
 
     setTimeout(function() {
-        $cordovaSplashscreen.hide()
-    }, 2000)
+        $cordovaSplashscreen.hide();
+    }, 2000);
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -63,7 +63,7 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
         url: '/scorepad/:scorepadId/:gameName',
         templateUrl: 'templates/game-detail.html',
         controller: 'gameDetailCtrl'
-    })
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/scorepads');

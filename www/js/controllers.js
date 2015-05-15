@@ -6,7 +6,7 @@ angular.module('scorepad.controllers', [])
   // function to handle the delete action for scorepads
   $scope.swipeToDelete = function(scorepad) {
       scorepads.delete(scorepad);
-  }
+  };
 
   // function for the creation of new scorepads
   $scope.submit = function(data) {
@@ -27,7 +27,7 @@ angular.module('scorepad.controllers', [])
       scorepads.create(newScorepad);
       // go back to scorepads
       $location.path("/scorepads");
-  }
+  };
 })
 
 .controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {
@@ -53,7 +53,7 @@ angular.module('scorepad.controllers', [])
         {
             name: data.name,
             players: players
-        }
+        };
         // add the new game to the games array
         $scope.scorepad.games.push(newGame);
         // go back to the games list
@@ -63,7 +63,7 @@ angular.module('scorepad.controllers', [])
     // function to handle swipe to delete a game
     $scope.swipeToDelete = function(game) {
         $scope.scorepad.games.splice($scope.scorepad.games.indexOf(game), 1);
-    }
+    };
 })
 
 .controller('gameDetailCtrl', function($scope, $stateParams, $ionicPopup, scorepads) {
@@ -95,7 +95,7 @@ angular.module('scorepad.controllers', [])
             bar.className = "playerButtonBar show";
             $scope.selectedPlayer = bar.id; // select the player
         }
-    }
+    };
 
     $scope.scoreChangeButtonHandler = function(action, playerID) {
 
@@ -127,7 +127,7 @@ angular.module('scorepad.controllers', [])
         // reset the input
         document.getElementById(playerID).getElementsByClassName('numberInput')[0].value = "";
 
-    }
+    };
 
     // function to reset the score of all players
     $scope.resetGame = function() {
@@ -146,7 +146,7 @@ angular.module('scorepad.controllers', [])
             }
             ]
         });
-    }
+    };
 
 })
 
@@ -159,5 +159,5 @@ angular.module('scorepad.controllers', [])
                 break;
         } // switch
         } // link
-    } // return
+    }; // return
 });

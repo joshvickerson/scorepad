@@ -45,5 +45,5 @@ angular.module('scorepad.services', ['ngStorage'])
     delete: function(scorepad) {
         $localStorage.scorepads.splice($localStorage.scorepads.indexOf(scorepad), 1);
     }
-  }
+  };
 });
