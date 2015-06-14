@@ -10,19 +10,35 @@ angular.module('scorepad.controllers', [])
 
   // function for the creation of new scorepads
   $scope.submit = function(data) {
-      // parse and submit form data
+      // determine id for new scorepad
       var newID = 0;
       if($scope.scorepads.length > 0) {
           newID = $scope.scorepads[$scope.scorepads.length-1].id + 1;
       }
+      if(data.winScore == undefined) {
+        data.winScore = 0;
+      }
+      // make the scorepad structure
       var newScorepad =
-      { id: newID, name: data.name, config: {
-              winScore: data.winScore,
-              maxPlayers: 4,
-              scoreType: 'p'
-          },
-          games: []
+      { id: newID,
+        name: data.name,
+        config: {
+          winScore: data.winScore,
+          scoreType: 'p'
+        },
+        players: []
       };
+      // parse player data
+      newScorepad.players.push({name:data.player1, score: 0});
+      if(data.player2) {
+        newScorepad.players.push({name:data.player2, score: 0});
+      }
+      if(data.player3) {
+        newScorepad.players.push({name:data.player3, score: 0});
+      }
+      if(data.player4) {
+        newScorepad.players.push({name:data.player4, score: 0});
+      }
       // store the scorepad
       scorepads.create(newScorepad);
       // go back to scorepads
@@ -30,57 +46,15 @@ angular.module('scorepad.controllers', [])
   };
 })
 
-.controller('scorepadDetailCtrl', function($scope, $stateParams, scorepads) {
-
-    $scope.scorepad = scorepads.get($stateParams.scorepadId);
-
-    // function for the creation of new games
-    $scope.submit = function(data) {
-
-        var players = [];
-        players.push({name:data.player1, score: 0});
-        if(data.player2) {
-            players.push({name:data.player2, score: 0});
-        }
-        if(data.player3) {
-            players.push({name:data.player3, score: 0});
-        }
-        if(data.player4) {
-            players.push({name:data.player4, score: 0});
-        }
-
-        var newGame =
-        {
-            name: data.name,
-            players: players
-        };
-        // add the new game to the games array
-        $scope.scorepad.games.push(newGame);
-        // go back to the games list
-        window.history.back();
-    };
-
-    // function to handle swipe to delete a game
-    $scope.swipeToDelete = function(game) {
-        $scope.scorepad.games.splice($scope.scorepad.games.indexOf(game), 1);
-    };
-})
-
 .controller('gameDetailCtrl', function($scope, $stateParams, $ionicPopup, scorepads) {
 
     // this function gets the relevant game object from the scorepad
-    function gameDetails($stateParams, scorepads) {
-        var games = scorepads.get($stateParams.scorepadId).games;
-
-        for(var i = 0; i < games.length; i++) {
-            if(games[i].name === $stateParams.gameName) {
-                return games[i];
-            }
-        }
+    function gameDetails($stateParams) {
+        var games = '';
     }
 
     // add the game to the scope
-    $scope.game = gameDetails($stateParams, scorepads);
+    $scope.game = scorepads.get($stateParams.scorepadId);
 
     // default to selecting the first player in the list
     $scope.selectedPlayer = 0;

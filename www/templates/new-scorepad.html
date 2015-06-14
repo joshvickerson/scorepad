@@ -18,10 +18,46 @@
             name="winScore"
             maxlength="5"
             minlength="1"
-            placeholder="Enter 0 for no winning score."
+            placeholder="Leave blank for no winning score."
             ng-model="data.winScore"
             autocomplete="off"
+            />
+        </div>
+        <div class="field">
+            <label for="player1">Player 1:</label>
+            <input type="text"
+            name="player1"
+            maxlength="15"
+            ng-model="data.player1"
+            autocomplete="off"
             required/>
+        </div>
+        <div class="field">
+            <label for="player2">Player 2:</label>
+            <input type="text"
+            name="player1"
+            maxlength="15"
+            ng-model="data.player2"
+            autocomplete="off"
+            />
+        </div>
+        <div class="field">
+            <label for="player3">Player 3:</label>
+            <input type="text"
+            name="player1"
+            maxlength="15"
+            ng-model="data.player3"
+            autocomplete="off"
+            />
+        </div>
+        <div class="field">
+            <label for="player4">Player 4:</label>
+            <input type="text"
+            name="player1"
+            maxlength="15"
+            ng-model="data.player4"
+            autocomplete="off"
+            />
         </div>
         <div class="bar bar-footer">
             <input value="Create Scorepad" type="submit" for="newScorepad" class="button button-balanced"/>

@@ -1,6 +1,22 @@
 {
   "name": "Scorepad",
-  "private": "true",
+  "version": "1.0.0",
+  "homepage": "https://github.com/joshvickerson/scorepad",
+  "authors": [
+    "Josh Vickerson <josh@joshvickerson.com>"
+  ],
+  "description": "Scorepad is a simple scorekeeping application for iOS.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngCordova": "~0.1.17-alpha"
+  },
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0"
   }

@@ -49,21 +49,9 @@ angular.module('scorepad', ['ionic', 'scorepad.controllers', 'scorepad.services'
 
     .state('scorepad-detail', {
         url: '/scorepad/:scorepadId',
-        templateUrl: 'templates/scorepad-detail.html',
-        controller: 'scorepadDetailCtrl'
-    })
-
-    .state('new-game', {
-        url: '/scorepad/:scorepadId/new',
-        templateUrl: 'templates/new-game.html',
-        controller: 'scorepadDetailCtrl'
-    })
-
-    .state('game-detail', {
-        url: '/scorepad/:scorepadId/:gameName',
         templateUrl: 'templates/game-detail.html',
         controller: 'gameDetailCtrl'
-    });
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/scorepads');
