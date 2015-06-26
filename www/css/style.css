@@ -9,18 +9,23 @@ ion-content, .scroll, form {
     text-shadow: 1px 1px 1px #eee;
 }
 
+.bar .title {
+  font-size: 18px;
+  line-height: 43px;
+}
+
 .bar-footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
     text-align: center;
     border-top: thin solid #999;
+    height: 54px;
 }
 
 .bar-footer .button {
-    width: 50%;
+    width: 65%;
     margin: auto;
-    font-size: 18px !important;
+    font-size: 21px;
+    padding: 3px 0;
 }
 
 .player {
@@ -112,17 +117,14 @@ form label {
     font-size: 16px;
 }
 
-form input[type="text"],
-form input[type="tel"] {
-    border: thin solid #999;
-    border-radius: 4px;
-    padding: 0 3px;
-}
-
-form input[type="tel"] {
-    width: 50%;
+form .field input {
+  box-sizing: border-box;
+  border: thin solid #999;
+  border-radius: 4px;
+  padding: 0 3px;
+  width: 100%;
 }
 
 .deleteButton {
-    line-height: 52px;
+  line-height: 52px;
 }

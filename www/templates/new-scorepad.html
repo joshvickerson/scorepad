@@ -10,7 +10,8 @@
                 placeholder="E.g. Scrabble, Rummy, etc."
                 ng-model="data.name"
                 autocomplete="off"
-                required/>
+                required
+                />
         </div>
         <div class="field">
             <label for="winScore">Winning Score:</label>
@@ -30,7 +31,8 @@
             maxlength="15"
             ng-model="data.player1"
             autocomplete="off"
-            required/>
+            required
+            />
         </div>
         <div class="field">
             <label for="player2">Player 2:</label>
@@ -59,7 +61,7 @@
             autocomplete="off"
             />
         </div>
-        <div class="bar bar-footer">
+        <div class="bar bar-footer hide-on-keyboard-open">
             <input value="Create Scorepad" type="submit" for="newScorepad" class="button button-balanced"/>
         </div>
     </form>

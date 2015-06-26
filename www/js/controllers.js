@@ -2,6 +2,7 @@ angular.module('scorepad.controllers', [])
 
 .controller('scorepadsCtrl', function($scope, $location, scorepads) {
   $scope.scorepads = scorepads.all();
+  $scope.submitHidden = 'show';
 
   // function to handle the delete action for scorepads
   $scope.swipeToDelete = function(scorepad) {
