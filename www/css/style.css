@@ -28,6 +28,32 @@ ion-content, .scroll, form {
     padding: 3px 0;
 }
 
+.empty-state {
+  height: 85%;
+  width: 100%;
+  text-align: center;
+  display: table;
+  text-shadow: 1px 1px 1px #eee;
+  color: #aaa;
+}
+
+.empty-state .empty-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.empty-state p {
+  font-size: 1.25em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.empty-state .button {
+  color: #999;
+  border-color: #ccc;
+  width: 50%;
+}
+
 .player {
     overflow: hidden;
     border-bottom: thin solid #ddd;

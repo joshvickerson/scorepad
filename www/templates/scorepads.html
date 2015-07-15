@@ -1,5 +1,13 @@
 <ion-view title="Scorepads">
   <ion-content>
+    <div class="empty-state" ng-if="scorepads.length < 1">
+      <div class="empty-wrapper">
+        <p>
+          You're not playing any games
+        </p>
+        <a class="button new-game" ng-href="#/scorepads/new">Start Having Fun</a>
+      </div>
+    </div>
     <ion-list>
       <ion-item ng-repeat="scorepad in scorepads" href="#/scorepad/{{scorepad.id}}">
         {{scorepad.name}}
