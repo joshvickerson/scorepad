@@ -5,7 +5,7 @@
   The scorepads service returns an array of scorepad data
 -->
 <ion-view title="{{game.name}}">
-  <ion-content has-header="true">
+  <ion-content has-header="true" overflow-scroll="true">
       <ion-list>
           <div class="player" ng-repeat="player in game.players">
           <ion-item detect-gestures gesture-type="tap" type="item-text-wrap">
