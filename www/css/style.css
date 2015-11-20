@@ -139,17 +139,23 @@ form .field:first-child {
   margin-top: 0px;
 }
 
+form .field:last-child {
+  margin-bottom: 20px;
+}
+
 form label {
-    font-size: 16px;
-    display: none;
+  display: none;
 }
 
 form .field input {
   box-sizing: border-box;
   border: none;
   border-bottom: thin solid #aaa;
-  padding: 0 3px;
+  padding: 0;
   width: 100%;
+  -webkit-border-radius:0;
+  border-radius:0;
+  -webkit-appearance: none;
 }
 
 form h2 {
