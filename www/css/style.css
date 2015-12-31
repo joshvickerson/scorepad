@@ -55,107 +55,86 @@ ion-content, .scroll, form {
 }
 
 .player {
-    overflow: hidden;
-    border-bottom: thin solid #ddd;
+  border-bottom: thin solid #ddd;
+  transition: transform 0.2s ease-in;
 }
 
 .player ion-item {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 
 .player-name {
-    float: left;
-    width: 50%;
-    line-height: 64px;
-    font-size: 28px;
-    display: block;
+  float: left;
+  width: 50%;
+  line-height: 64px;
+  font-size: 28px;
+  display: block;
 }
 
 .player-score {
-    float: right;
-    width: 50%;
-    line-height: 64px;
-    font-size: 28px;
-    text-align: right;
-    display: block;
+  float: right;
+  width: 50%;
+  line-height: 64px;
+  font-size: 28px;
+  text-align: right;
+  display: block;
 }
 
 .playerButtonBar {
-    width: 100%;
-    padding: 0px 10px 0px 0px;
-    font-size: 18px;
-    float: left;
-    clear: both;
-    -webkit-transition: height 0.2s ease-in-out;
-    transition: height 0.2s ease-in-out;
-    background-color: #f0b840;
+  height: 46px;
+  width: 100%;
+  padding: 0px 10px 0px 0px;
+  font-size: 18px;
+  position: absolute;
+  top: 1px;
+  transition: transform 0.2s ease-in;
+  background-color: #f0b840;
 }
 
 .playerButtonBar button {
-    width: 20%;
-    max-width: 64px;
-    height: 100%;
-    float: left;
-    border: none;
-    background-color: #f0b840;
-    color: #fff;
-    font-size: 24px;
-    border-right: thin solid #d39211;
-    padding: 0;
+  width: 20%;
+  max-width: 64px;
+  height: 100%;
+  float: left;
+  border: none;
+  background-color: #f0b840;
+  color: #fff;
+  font-size: 24px;
+  border-right: thin solid #d39211;
+  padding: 0;
 }
 
 .playerButtonBar input {
-    width: 25%;
-    max-width: 90px;
-    float: right;
-    border: thin solid #999;
-    line-height: 36px;
-    height: 36px;
-    margin-top: 5px;
-    text-align: center;
-    -webkit-transition: height 0.2s ease-in-out;
-    transition: height 0.2s ease-in-out;
+  width: 25%;
+  max-width: 90px;
+  float: right;
+  border: thin solid #999;
+  line-height: 36px;
+  height: 36px;
+  margin-top: 5px;
+  text-align: center;
 }
 
-.playerButtonBar.hidden input {
-    height: 0;
-}
-
-.hidden {
-    height: 0px;
-    overflow: hidden;
-}
-
-.show {
-    display: block;
-    height: 46px;
-}
-
-form .field {
-  margin-bottom: 25px;
-}
-
-form .field:first-child {
-  margin-top: 0px;
-}
-
-form .field:last-child {
-  margin-bottom: 20px;
-}
-
-form label {
-  display: none;
-}
-
-form .field input {
+form ion-input {
   box-sizing: border-box;
   border: none;
   border-bottom: thin solid #aaa;
+  margin-bottom: 15px;
   padding: 0;
   width: 100%;
-  -webkit-border-radius:0;
-  border-radius:0;
-  -webkit-appearance: none;
+}
+
+form ion-input:first-child {
+  margin-top: 0px;
+}
+
+form ion-input:last-child {
+  margin-bottom: 20px;
+}
+
+form ion-label.input-label {
+  font-size: 1.1em;
+  width: 100%;
 }
 
 form h2 {

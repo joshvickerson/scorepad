@@ -57,19 +57,35 @@ angular.module('scorepad.controllers', [])
     // add the game to the scope
     $scope.game = scorepads.get($stateParams.scorepadId);
 
-    // default to selecting the first player in the list
-    $scope.selectedPlayer = 0;
+    $scope.selectedPlayer = null;
 
     // function to handle interaction when a player taps on a player item
     $scope.playerTap = function(event) {
-        var bar = event.target.parentNode.parentNode.getElementsByClassName('playerButtonBar')[0];
-        if(bar.className === "playerButtonBar show") {
-            bar.className = "playerButtonBar hidden";
+      var allPlayers = document.getElementsByClassName('player');
+      for(var i = 0; i < allPlayers.length; i++) {
+        // move all players and their bars back
+        allPlayers[i].style.transform = "translateY(0px)";
+        allPlayers[i].children[1].style.transform = 'translateY(0px)';
+      }
+      // lets open the relevant bar
+      var bar = event.target.parentNode.parentNode.getElementsByClassName('playerButtonBar')[0];
+      // if we tapped a different player than before, open the bar
+      if($scope.selectedPlayer != bar.id) {
+        $scope.selectedPlayer = bar.id;
+        bar.style.transform = 'translateY(64px)';
+        // move the players below this down
+        var movePlayer = parseInt(bar.id) + 1;
+        while(movePlayer < 4) {
+          console.log("moving player: " + movePlayer);
+          var player = document.getElementById(movePlayer).parentNode;
+          player.style.transform = "translateY(46px)";
+          movePlayer++;
         }
-        else {
-            bar.className = "playerButtonBar show";
-            $scope.selectedPlayer = bar.id; // select the player
-        }
+      }
+      // other wise, we tapped the same player leave it alone and clear selected player
+      else {
+        $scope.selectedPlayer = null;
+      }
     };
 
     $scope.scoreChangeButtonHandler = function(action, playerID) {

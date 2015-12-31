@@ -1,75 +1,75 @@
 <ion-view title="New Scorepad">
-  <ion-content padding="true" overflow-scroll="true">
+  <ion-content padding="true">
     <form name="newScorepad" ng-submit="submit(data)">
-        <h2>Game</h2>
-        <div class="field">
-            <label for="name">Scorepad Title:</label>
-            <input type="text"
-                name="name"
-                maxlength="20"
-                minlength="1"
-                placeholder="What are you playing?"
-                ng-model="data.name"
-                autocomplete="off"
-                required
-                />
-        </div>
-        <div class="field">
-            <label for="winScore">Winning Score:</label>
-            <input type="tel"
-            name="winScore"
-            maxlength="5"
+      <h2>Game</h2>
+      <ion-input class="item-floating-label">
+        <ion-label>What are you playing?</ion-label>
+        <input type="text"
+            name="name"
+            maxlength="20"
             minlength="1"
-            placeholder="Winning Score"
-            ng-model="data.winScore"
-            autocomplete="off"
-            />
-        </div>
-        <h2>Players</h2>
-        <div class="field">
-            <label for="player1">Player 1:</label>
-            <input type="text"
-            name="player1"
-            maxlength="15"
-            placeholder="Player 1"
-            ng-model="data.player1"
+            placeholder="What are you playing?"
+            ng-model="data.name"
             autocomplete="off"
             required
             />
-        </div>
-        <div class="field">
-            <label for="player2">Player 2:</label>
-            <input type="text"
-            name="player1"
-            maxlength="15"
-            placeholder="Player 2"
-            ng-model="data.player2"
-            autocomplete="off"
-            />
-        </div>
-        <div class="field">
-            <label for="player3">Player 3:</label>
-            <input type="text"
-            name="player1"
-            maxlength="15"
-            placeholder="Player 3"
-            ng-model="data.player3"
-            autocomplete="off"
-            />
-        </div>
-        <div class="field">
-            <label for="player4">Player 4:</label>
-            <input type="text"
-            name="player1"
-            maxlength="15"
-            placeholder="Player 4"
-            ng-model="data.player4"
-            autocomplete="off"
-            />
-        </div>
-        <div class="bar bar-footer hide-on-keyboard-open">
-            <input value="Create Scorepad" type="submit" for="newScorepad" class="button button-balanced"/>
-        </div>
+      </ion-input>
+      <ion-input class="item-floating-label">
+        <ion-label>Winning Score:</ion-label>
+        <input type="tel"
+        name="winScore"
+        maxlength="5"
+        minlength="1"
+        placeholder="Winning Score"
+        ng-model="data.winScore"
+        autocomplete="off"
+        />
+      </ion-input>
+      <h2>Players</h2>
+      <ion-input class="item-floating-label">
+        <ion-label>Player 1</ion-label>
+        <input type="text"
+        name="player1"
+        maxlength="15"
+        placeholder="Player 1"
+        ng-model="data.player1"
+        autocomplete="off"
+        required
+        />
+      </ion-input>
+      <ion-input class="item-floating-label">
+        <ion-label>Player 2</ion-label>
+        <input type="text"
+        name="player1"
+        maxlength="15"
+        placeholder="Player 2"
+        ng-model="data.player2"
+        autocomplete="off"
+        />
+      </ion-input>
+      <ion-input class="item-floating-label">
+        <ion-label>Player 3</ion-label>
+        <input type="text"
+        name="player1"
+        maxlength="15"
+        placeholder="Player 3"
+        ng-model="data.player3"
+        autocomplete="off"
+        />
+      </ion-input>
+      <ion-input class="item-floating-label">
+        <ion-label>Player 4</ion-label>
+        <input type="text"
+        name="player1"
+        maxlength="15"
+        placeholder="Player 4"
+        ng-model="data.player4"
+        autocomplete="off"
+        />
+      </ion-input>
+      <div class="bar bar-footer hide-on-keyboard-open">
+          <input value="Create Scorepad" type="submit" for="newScorepad" class="button button-balanced"/>
+      </div>
     </form>
 </ion-content>
 </ion-view>
